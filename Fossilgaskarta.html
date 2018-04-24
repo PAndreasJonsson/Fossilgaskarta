@@ -38,8 +38,20 @@
             accessToken: 'pk.eyJ1IjoieXJzYSIsImEiOiJjamZqdWU1ZXk1MGg4MndwZTRlN3AyenkwIn0.YKMopKmHolc4R7cmmP8vfg'
         }).addTo(mymap);
         
+        var markers = [
+            {
+                
+                coordinates: [57.692, 11.873], 
+                description: 'Här planeras det en ny fossilgasterminal som går under projektnamnet GO4LNG. Till terminal kommer det att kopplas en gasledning som ska importera gas till den svenska marknaden. En lokal gräsrotskampanj engagerar sig för att stoppa terminalen. Kolla in deras hemsida <a href="fossilgasfallan.se">fossilgasfallan.se</a>', 
+            },
+            {
+                coordinates: 
+            }
+        ]
         
-        L.marker([57.692, 11.873]).addTo(mymap).bindPopup('Här planeras det en ny fossilgasterminal som går under projektnamnet GO4LNG. Till terminal kommer det att kopplas en gasledning som ska importera gas till den svenska marknaden. En lokal gräsrotskampanj engagerar sig för att stoppa terminalen. Kolla in deras hemsida <a href="fossilgasfallan.se">fossilgasfallan.se</a>');
+        markers.forEach(function (marker) {
+            L.marker(marker.coordinates).addTo(mymap).bindPopup(marker.description)
+        })
         
         L.marker([58.921, 17.977]).addTo(mymap).bindPopup('Här, i hamnen i Nynäshamn, finns det redan en existerande terminal för att ta emot flytande fossilgas. Samla ihop några vänner och engagera dig för att terminalen ska läggas ned!');
         
